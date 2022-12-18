@@ -1,5 +1,5 @@
 import requests
-
+import json
 def get_user_name():
     # URL to randomuser.me API
     url = "https://randomuser.me/api"
@@ -31,10 +31,10 @@ def get_user_name():
 # Define users list
 users = []
 
-number_of_requests = 20
-number_of_male=1
+number_of_requests = 10
+number_of_male = 1
 # Get 10 users
-while number_of_male!=number_of_requests:
+while number_of_male != number_of_requests+1:
     # Get the user's name and age
     # Print request info
     
@@ -42,11 +42,18 @@ while number_of_male!=number_of_requests:
     gender,user = get_user_name()
     # Add the user to the list if the user male
     if gender=='male':
-        print(f'Request: [{number_of_requests}/{number_of_male}]')
+        print(f'Request: [{number_of_male}/{number_of_requests}]')
         users.append(user)
 
         number_of_male+=1
 
-   
-     
-print(users)
+ans_json = {
+    "results":{}
+
+}
+
+ans_json["results"] =  users
+
+
+with open("data.json",'w',encoding='utf8') as f:
+    json.dump(ans_json,f,indent = 4,)
