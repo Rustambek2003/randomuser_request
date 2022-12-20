@@ -34,26 +34,26 @@ users = []
 number_of_requests = 10
 number_of_male = 1
 # Get 10 users
-# while number_of_male != number_of_requests+1:
-#     # Get the user's name and age
-#     # Print request info
+while number_of_male != number_of_requests+1:
+    # Get the user's name and age
+    # Print request info
     
 
-#     gender,user = get_user_name()
-#     # Add the user to the list if the user male
-#     if gender=='male':
-#         print(f'Request: [{number_of_male}/{number_of_requests}]')
-#         users.append(user)
+    gender,user = get_user_name()
+    # Add the user to the list if the user male
+    if gender=='male':
+        print(f'Request: [{number_of_male}/{number_of_requests}]')
+        users.append(user)
 
-#         number_of_male+=1
+        number_of_male+=1
 
-# ans_json = {
-#     "results":{}
+ans_json = {
+    "results":{}
 
-# }
+}
 
-# ans_json["results"] =  users
+ans_json["results"] =  users
 
 
-# with open("data.json",'w',encoding='utf8') as f:
-#     json.dump(ans_json,f,indent = 4,)
+with open("data.json",'w',encoding='utf8') as f:
+    json.dump(ans_json,f,indent = 4,)
